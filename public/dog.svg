@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Sombra suave para o chão -->
+    <ellipse id="shadow" cx="250" cy="450" rx="120" ry="18" fill="#D0D7DE" opacity="0.6"/>
+    
+    <!-- Gradiente de luz para a cabeça -->
+    <radialGradient id="headGrad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#E29D62"/>
+      <stop offset="100%" stop-color="#C07536"/>
+    </radialGradient>
+
+    <!-- Gradiente para o corpo -->
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E29D62"/>
+      <stop offset="100%" stop-color="#B06528"/>
+    </linearGradient>
+
+    <!-- Gradiente para o focinho -->
+    <radialGradient id="snoutGrad" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F2E3D5"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sombra no chão -->
+  <use href="#shadow"/>
+
+  <g id="dog">
+    <!-- Cauda (Rabo) -->
+    <path d="M 330 350 C 390 330, 420 260, 400 220 C 390 200, 370 210, 375 230 C 385 260, 360 310, 310 330 Z" 
+          fill="#B06528" stroke="#8A4A18" stroke-width="3" stroke-linejoin="round"/>
+
+    <!-- Patas Traseiras -->
+    <ellipse cx="170" cy="400" rx="35" ry="45" fill="#B06528"/>
+    <rect x="145" y="410" width="40" height="35" rx="15" fill="#E29D62"/>
+    
+    <ellipse cx="330" cy="400" rx="35" ry="45" fill="#B06528"/>
+    <rect x="315" y="410" width="40" height="35" rx="15" fill="#E29D62"/>
+
+    <!-- Corpo -->
+    <path d="M 170 260 C 150 380, 180 430, 250 430 C 320 430, 350 380, 330 260 C 310 200, 190 200, 170 260 Z" 
+          fill="url(#bodyGrad)" stroke="#8A4A18" stroke-width="4"/>
+
+    <!-- Mancha branca no peito -->
+    <path d="M 220 270 C 200 340, 230 410, 250 410 C 270 410, 300 340, 280 270 C 260 250, 240 250, 220 270 Z" 
+          fill="#FFF9F2"/>
+
+    <!-- Coleira -->
+    <path d="M 185 245 C 220 265, 280 265, 315 245 C 320 255, 310 265, 250 275 C 190 265, 180 255, 185 245 Z" 
+          fill="#E74C3C"/>
+    <!-- Pingente da Coleira -->
+    <circle cx="250" cy="273" r="9" fill="#F1C40F" stroke="#D68910" stroke-width="2"/>
+
+    <!-- Patas Dianteiras -->
+    <rect x="200" y="330" width="35" height="115" rx="17" fill="#E29D62" stroke="#8A4A18" stroke-width="3"/>
+    <rect x="265" y="330" width="35" height="115" rx="17" fill="#E29D62" stroke="#8A4A18" stroke-width="3"/>
+    
+    <!-- Detalhes das garras/dedos dianteiros -->
+    <path d="M 212 435 L 212 445 M 223 435 L 223 445" stroke="#8A4A18" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 277 435 L 277 445 M 288 435 L 288 445" stroke="#8A4A18" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Orelhas (Atrás da cabeça) -->
+    <!-- Orelha Esquerda -->
+    <path d="M 160 130 C 110 130, 90 220, 130 250 C 150 260, 175 220, 170 170 Z" 
+          fill="#8A4A18" stroke="#5C310F" stroke-width="3"/>
+    <!-- Orelha Direita -->
+    <path d="M 340 130 C 390 130, 410 220, 370 250 C 350 260, 325 220, 330 170 Z" 
+          fill="#8A4A18" stroke="#5C310F" stroke-width="3"/>
+
+    <!-- Cabeça -->
+    <circle cx="250" cy="160" r="85" fill="url(#headGrad)" stroke="#8A4A18" stroke-width="4"/>
+
+    <!-- Focinho (Base branca/creme) -->
+    <ellipse cx="250" cy="185" rx="45" ry="32" fill="url(#snoutGrad)"/>
+
+    <!-- Nariz -->
+    <path d="M 235 168 C 240 163, 260 163, 265 168 C 272 175, 260 190, 250 190 C 240 190, 228 175, 235 168 Z" 
+          fill="#2C3E50"/>
+    <!-- Brilho no Nariz -->
+    <ellipse cx="244" cy="172" rx="4" ry="2" fill="#FFFFFF" opacity="0.8"/>
+
+    <!-- Boca e Língua -->
+    <path d="M 235 197 C 245 205, 250 205, 250 197 C 250 205, 255 205, 265 197" 
+          fill="none" stroke="#2C3E50" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Língua feliz para fora -->
+    <path d="M 243 202 C 243 220, 257 220, 257 202 Z" fill="#FF7675" stroke="#D63031" stroke-width="1.5"/>
+
+    <!-- Olho Esquerdo -->
+    <circle cx="210" cy="140" r="12" fill="#2C3E50"/>
+    <circle cx="206" cy="136" r="4" fill="#FFFFFF"/> <!-- Brilho principal -->
+    <circle cx="213" cy="143" r="2" fill="#FFFFFF"/> <!-- Brilho secundário -->
+    <!-- Sobrancelha Esquerda -->
+    <path d="M 198 120 Q 210 112 222 122" fill="none" stroke="#8A4A18" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Olho Direito -->
+    <circle cx="290" cy="140" r="12" fill="#2C3E50"/>
+    <circle cx="286" cy="136" r="4" fill="#FFFFFF"/> <!-- Brilho principal -->
+    <circle cx="293" cy="143" r="2" fill="#FFFFFF"/> <!-- Brilho secundário -->
+    <!-- Sobrancelha Direita -->
+    <path d="M 278 122 Q 290 112 302 120" fill="none" stroke="#8A4A18" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Bochechas Coradas -->
+    <ellipse cx="185" cy="170" rx="10" ry="6" fill="#FF7675" opacity="0.4"/>
+    <ellipse cx="315" cy="170" rx="10" ry="6" fill="#FF7675" opacity="0.4"/>
+  </g>
+</svg>
