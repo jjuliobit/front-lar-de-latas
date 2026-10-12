@@ -1,5 +1,12 @@
 # Lar de Latas — adoção responsável de animais
 
+<img width="1867" height="879" alt="Captura de tela 2026-10-11 212423" src="https://github.com/user-attachments/assets/e0cbc894-9366-4a6d-aa64-c0e908427a09" />
+<img width="1880" height="921" alt="Captura de tela 2026-10-11 211408" src="https://github.com/user-attachments/assets/58882892-8b88-4197-a6e5-891e18dc920a" />
+<img width="1876" height="855" alt="Captura de tela 2026-10-11 212521" src="https://github.com/user-attachments/assets/895601d5-bf7b-49ee-a4b5-006220e5cd0e" />
+<img width="1716" height="880" alt="Captura de tela 2026-10-11 212511" src="https://github.com/user-attachments/assets/3897190f-3ff5-4f3a-a1fc-403e9470ba96" />
+<img width="1850" height="876" alt="Captura de tela 2026-10-11 212438" src="https://github.com/user-attachments/assets/2df62eee-55f5-4270-8a4d-8a6b35c5150b" />
+
+
 Front-end da plataforma **Lar de Latas**. O objetivo é conectar animais disponíveis para adoção com pessoas interessadas e permitir o cadastro e a divulgação de animais perdidos.
 
 Este repositório é só a interface. Os dados vêm de uma API HTTP separada. Sem o back-end acessível, login, listagens e cadastros não funcionam.
