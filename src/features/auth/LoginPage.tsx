@@ -44,29 +44,29 @@ export function LoginPage() {
   // Função para obter mensagem de erro amigável
   const getErrorMessage = () => {
     if (!loginMutation.error) return "";
-    
+
     const error = loginMutation.error as any;
-    
+
     // Erro de conexão (não conseguiu conectar na API)
     if (error.code === "ERR_NETWORK" || error.message?.includes("Network Error")) {
       return `Não foi possível conectar ao servidor. Verifique se a API está rodando em ${import.meta.env.VITE_API_BASE_URL}`;
     }
-    
+
     // Erro 401 - Credenciais inválidas
     if (error.response?.status === 401) {
       return "E-mail ou senha incorretos. Verifique suas credenciais.";
     }
-    
+
     // Erro 500 - Erro no servidor
     if (error.response?.status >= 500) {
       return "Erro no servidor. Tente novamente mais tarde.";
     }
-    
+
     // Mensagem do backend (se existir)
     if (error.response?.data?.message) {
       return error.response.data.message;
     }
-    
+
     // Fallback
     return error.message || "Erro ao fazer login. Tente novamente.";
   };
@@ -191,12 +191,47 @@ export function LoginPage() {
 
               <Divider className="my-6" />
 
+
               <p className="text-center text-sm text-gray-600">
                 Ainda não tem uma conta?{" "}
                 <Link to="/registro" className="text-primary font-semibold hover:underline">
                   Criar conta
                 </Link>
               </p>
+            </CardBody>
+          </Card>
+
+          <Card className="mt-6 overflow-hidden rounded-xl border border-amber-200 bg-amber-50 shadow-sm dark:border-amber-900/50 dark:bg-amber-950/30">
+            <CardBody className="flex flex-row items-start gap-3 p-4 sm:p-5">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+
+              <div className="min-w-0 flex-1">
+                <h3 className="text-sm font-semibold text-amber-900 dark:text-amber-200">
+                  A API pode demorar um pouco
+                </h3>
+
+                <p className="mt-1 text-sm leading-relaxed text-amber-800 dark:text-amber-300/90">
+                  Na primeira tentativa, o servidor pode levar alguns instantes para
+                  responder devido à hospedagem. Aguarde o carregamento e, se necessário,
+                  tente novamente.
+                </p>
+              </div>
             </CardBody>
           </Card>
         </div>
