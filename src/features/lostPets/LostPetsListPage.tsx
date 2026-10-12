@@ -290,7 +290,7 @@ export function LostPetsListPage() {
 
         {/* Lost Pets List */}
         {lostPets.length > 0 ? (
-          <div className="space-y-6">
+          <div className="space-y-6 mb-6">
             {lostPets.map((pet) => (
               <LostPetCard
                 key={pet.id}
