@@ -7,6 +7,11 @@ import { PublicLayout } from "@/layouts";
 import { useLogin, useToast } from "@/hooks";
 import { SESSION_EXPIRED_KEY } from "@/services/api";
 
+const TEST_ACCOUNT = {
+  email: "teste@gmail.com",
+  senha: "@Teste123",
+};
+
 export function LoginPage() {
   const loginMutation = useLogin();
   const toast = useToast();
@@ -74,7 +79,8 @@ export function LoginPage() {
   return (
     <PublicLayout>
       <div className="min-h-[calc(100vh-200px)] flex items-center justify-center py-12 px-4">
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-3xl">
+          <div className="mx-auto w-full max-w-md">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Bem-vindo de volta</h1>
             <p className="text-gray-600">Entre com sua conta para continuar</p>
@@ -200,40 +206,89 @@ export function LoginPage() {
               </p>
             </CardBody>
           </Card>
+          </div>
 
-          <Card className="mt-6 overflow-hidden rounded-xl border border-amber-200 bg-amber-50 shadow-sm dark:border-amber-900/50 dark:bg-amber-950/30">
-            <CardBody className="flex flex-row items-start gap-3 p-4 sm:p-5">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 6v6l4 2" />
-                </svg>
-              </div>
+          <div className="mt-6 grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2">
+            <Card className="h-full border border-gray-200 shadow-sm">
+              <CardBody className="flex h-full flex-row items-start gap-3 p-4 sm:p-5">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                </div>
 
-              <div className="min-w-0 flex-1">
-                <h3 className="text-sm font-semibold text-amber-900 dark:text-amber-200">
-                  A API pode demorar um pouco
-                </h3>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-sm font-semibold text-gray-900">
+                    A API pode demorar um pouco
+                  </h3>
 
-                <p className="mt-1 text-sm leading-relaxed text-amber-800 dark:text-amber-300/90">
-                  Na primeira tentativa, o servidor pode levar alguns instantes para
-                  responder devido à hospedagem. Aguarde o carregamento e, se necessário,
-                  tente novamente.
-                </p>
-              </div>
-            </CardBody>
-          </Card>
+                  <p className="mt-1 text-sm leading-relaxed text-gray-600">
+                    Na primeira tentativa, o servidor pode levar alguns instantes para
+                    responder devido à hospedagem. Aguarde o carregamento e, se necessário,
+                    tente novamente.
+                  </p>
+                </div>
+              </CardBody>
+            </Card>
+
+            <Card className="h-full border border-gray-200 shadow-sm">
+              <CardBody className="flex h-full flex-col gap-4 p-4 sm:p-5">
+                <div className="flex items-start gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </div>
+
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-sm font-semibold text-gray-900">
+                      Conta para testes
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-gray-600">
+                      Use estas credenciais para explorar o sistema sem criar uma conta.
+                    </p>
+                  </div>
+                </div>
+
+                <dl className="mt-auto space-y-2 rounded-lg bg-gray-50 px-3 py-2.5 text-sm">
+                  <div className="flex items-center justify-between gap-3">
+                    <dt className="text-gray-500">E-mail</dt>
+                    <dd className="font-medium text-gray-900">{TEST_ACCOUNT.email}</dd>
+                  </div>
+                  <div className="flex items-center justify-between gap-3">
+                    <dt className="text-gray-500">Senha</dt>
+                    <dd className="font-mono font-medium text-gray-900">{TEST_ACCOUNT.senha}</dd>
+                  </div>
+                </dl>
+              </CardBody>
+            </Card>
+          </div>
         </div>
       </div>
     </PublicLayout>
