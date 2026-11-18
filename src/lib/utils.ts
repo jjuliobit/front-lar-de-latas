@@ -78,14 +78,16 @@ export const PLACEHOLDER_PET_IMAGE =
 
 /**
  * A API devolve a foto como caminho relativo ("/uploads/pets/<uuid>.png"),
- * servido fora do prefixo /api. Um src relativo resolveria contra a porta do
- * front (5173) e quebraria, então(prefixa com a origem da API.
+ * servido fora do prefixo /api. Em desenvolvimento a origem é a da API
+ * (outra porta). Em produção o caminho fica na mesma origem do front.
  */
 export function resolveApiImageUrl(foto: string | null | undefined): string | null {
   if (!foto) return null;
   if (/^https?:\/\//i.test(foto)) return foto;
 
-  const base = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api";
+  const base = import.meta.env.PROD
+    ? "/api"
+    : import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api";
   const origin = base.replace(/\/api\/?$/, "");
   return `${origin}${foto.startsWith("/") ? foto : `/${foto}`}`;
 }

@@ -23,10 +23,11 @@ export const adoptionKeys = {
  * Hook para buscar adoções recebidas (onde o usuário é dono do pet).
  * Atualiza automaticamente a cada 10 segundos para mostrar novas solicitações.
  */
-export function useReceivedAdoptions() {
+export function useReceivedAdoptions(options?: { enabled?: boolean }) {
   return useQuery<AdoptionWithRelations[], Error>({
     queryKey: adoptionKeys.received(),
     queryFn: () => adoptionsService.getReceived(),
+    enabled: options?.enabled ?? true,
     refetchInterval: 10000, // Refetch a cada 10 segundos
     refetchOnWindowFocus: true, // Refetch quando voltar para a aba
   });

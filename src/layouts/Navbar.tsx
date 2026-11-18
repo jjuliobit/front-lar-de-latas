@@ -30,8 +30,11 @@ export function Navbar({ isAuthenticated = false, user }: NavbarProps) {
   const location = useLocation();
   const logoutMutation = useLogout();
 
-  // Buscar adoções recebidas para mostrar badge de notificação
-  const { data: receivedAdoptions } = useReceivedAdoptions();
+  // Sem sessão essa rota responde 401. Disparar mesmo assim, na tela de
+  // login, faz o interceptor tratar o 401 como sessão expirada.
+  const { data: receivedAdoptions } = useReceivedAdoptions({
+    enabled: isAuthenticated,
+  });
   const pendingAdoptionsCount = receivedAdoptions?.filter(
     (adoption) => ["Enviado", "Analisando"].includes(adoption.status)
   ).length ?? 0;
